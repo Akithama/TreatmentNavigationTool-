@@ -1,0 +1,28 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model Unum.Common.QuestionAnswerDto
+
+<div class="text-center">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <ul>
+                @foreach (var item in ViewBag.Questions)
+                {
+                    <li>
+                        @item.Description
+                    </li>
+                    foreach (var answerList in item.Answers)
+                    {
+                        <li>
+                            @answerList.AnswerDescription
+                        </li>
+                    }
+                    //break;
+                }
+            </ul>
+        </div>
+    </div>
+</div>
+
